@@ -31,11 +31,11 @@
               <small>&mdash; John Leider</small>
             </em>
           </div>
+          <!-- https://gist.github.com/Monota/e3da8a14dea8cf16f84e053827678a10 -->
           <v-data-table
             :headers="headers"
             :items="desserts"
             item-key="name"
-            :locale="'ja'"
             class="elevation-1"
           >
             <template slot="items" slot-scope="props">

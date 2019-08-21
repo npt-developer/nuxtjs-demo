@@ -1,6 +1,5 @@
-const colors = require('vuetify/es5/util/colors').default
-const ja = require('vuetify/es5/locale/ja').default
-const en = require('vuetify/es5/locale/en').default
+// const colors = require('vuetify/es5/util/colors').default
+// const ja = require('vuetify/es5/locale/ja').default
 
 module.exports = {
   mode: 'universal',
@@ -33,8 +32,7 @@ module.exports = {
   */
   plugins: [
     //
-    // '~/plugins/i18n.js',
-    // '~/plugins/vuetify.js'
+    '~/plugins/i18n.js',
   ],
   /*
   ** Nuxt.js dev-modules
@@ -52,31 +50,28 @@ module.exports = {
   ** https://github.com/nuxt-community/vuetify-module
   */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    },
-    lang: {
-      locales: { ja },
-      current: 'ja',
-    },
+    // https://github.com/nuxt-community/vuetify-module#optionspath
+    optionsPath: './plugins/vuetify.options.js',
+    // customVariables: ['~/assets/variables.scss'],
+    // theme: {
+    //   dark: true,
+    //   themes: {
+    //     dark: {
+    //       primary: colors.blue.darken2,
+    //       accent: colors.grey.darken3,
+    //       secondary: colors.amber.darken3,
+    //       info: colors.teal.lighten1,
+    //       warning: colors.amber.base,
+    //       error: colors.deepOrange.accent4,
+    //       success: colors.green.accent3
+    //     }
+    //   }
+    // },
   },
   /*
   ** Build configuration
   */
   build: {
-    // vendor: ['vuetify', 'vue-i18n'],
     /*
     ** You can extend webpack config here
     */
