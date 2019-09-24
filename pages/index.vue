@@ -59,6 +59,15 @@
           <v-btn color="primary" nuxt to="/inspire">Continue</v-btn>
         </v-card-actions>
       </v-card>
+      <div class="text-xs-center">
+        <ul>
+          <li>{{paginatorDataList[paginator.page - 1].name}}</li>
+        </ul>
+        <v-pagination
+          v-model="paginator.page"
+          :length="paginator.total"
+        ></v-pagination>
+      </div>
     </v-flex>
   </v-layout>
 </template>
@@ -74,6 +83,10 @@ export default {
   },
   data: () => {
     return {
+      paginator: {
+        page: 1,
+        total: 3,
+      },
       selectedItem: "Sample",
       pagination: {
         sortBy: "name"
@@ -111,8 +124,31 @@ export default {
           protein: 4.3,
           iron: "1%"
         }
+      ],
+      paginatorDataList: [
+        {
+          id: 1,
+          name: 'NVA'
+        },
+        {
+          id: 2,
+          name: 'NVB'
+        },
+        {
+          id: 3,
+          name: 'NVC'
+        }
       ]
     };
+  },
+  watch: {
+    'paginator.page': function (pageNew) {
+      console.log('pageNew', pageNew)
+      this.$router.push({name: this.name, query: {page: pageNew}})
+    }
+  },
+  created() {
+    this.paginator.page = parseInt(this.$route.query.page)
   }
 };
 </script>
