@@ -67,9 +67,13 @@
           v-model="paginator.page"
           :length="paginator.total"
         ></v-pagination>
-        <!-- Test ellipsis multi line. -->
+        <!-- Text ellipsis multi line. -->
         <v-clamp autoresize :max-lines="3">FT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSS. FT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSS. FT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSS. FT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSS. FT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSSFT Labs also has created a JavaScript plugin to do the job. It's nice in that you don't have to specify the number of lines, it just happens when the text overflows the container, so the design decision stay in the CSS. </v-clamp>
-        
+
+        <form action="#" method="get">
+          <input type="file" @change="fileChange">
+          <input ref="inputReset" type="reset" style="display: none;" value="Reset">
+        </form>
       </div>
     </v-flex>
   </v-layout>
@@ -150,6 +154,18 @@ export default {
     'paginator.page': function (pageNew) {
       console.log('pageNew', pageNew)
       this.$router.push({name: this.name, query: {page: pageNew}})
+    }
+  },
+  methods: {
+    fileChange: function(event){
+      console.log('fileChange', event);
+      // reset form after 5s
+      var that = this;
+      setTimeout(function() {
+        that.$refs.inputReset.click();
+        alert('reseted!!')
+      }, 5000)
+      
     }
   },
   created() {
