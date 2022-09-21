@@ -16,7 +16,7 @@
     "nuxt": "^2.0.0",
     "vue-clamp": "^0.2.2",
     "vue-i18n": "^8.14.0",
-    "vuetify": "^2.0.9"
+    "vuetify": "^2.6.10"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0",
